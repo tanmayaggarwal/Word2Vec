@@ -9,7 +9,7 @@ from SkipGram import SkipGram
 from get_batches import get_batches
 from cosine_similarity import cosine_similarity
 
-def train(model, vocab_to_int, embedding_dim, train_words):
+def train(vocab_to_int, int_to_vocab, embedding_dim, train_words, device):
 
     model = SkipGram(len(vocab_to_int), embedding_dim).to(device)
 
@@ -43,4 +43,4 @@ def train(model, vocab_to_int, embedding_dim, train_words):
                     closest_words = [int_to_vocab[idx.item()] for idx in closest_idxs[ii]][1:]
                     print(int_to_vocab[valid_idx.item()]+" | " + ", ".join(closest_words))
                 print("...")
-    return
+    return model
