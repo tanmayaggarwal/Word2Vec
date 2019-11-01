@@ -21,4 +21,4 @@ def subsampling(int_words, word_counts):
     # create a new list of words for training
     train_words = [word for word in int_words if random.random() < (1-p_drop[word])]
 
-    return train_words
+    return train_words, freqs
