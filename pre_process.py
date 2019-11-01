@@ -9,6 +9,6 @@ import utils
 def pre_process(text):
     words = utils.preprocess(text)
 
-    print(words[:30])
+    #print(words[:30])
 
     return words
